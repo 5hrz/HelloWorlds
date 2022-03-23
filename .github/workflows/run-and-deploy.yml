@@ -18,9 +18,8 @@ jobs:
         run: |
           cd $GITHUB_WORKSPACE
           git branch publish
-          git checkout publish
-          git fetch
-          ls
+          git fetch origin publish
+          git checkout origin publish
       #
       # 実行用に各言語の環境をセットアップする
       #
