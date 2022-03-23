@@ -1,6 +1,6 @@
 #!/bin/bash
 
-for class in $(ls);
+for class in $(ls *.java);
 do
   if [ -f $class ]; then
     java $class >> ${class}.log

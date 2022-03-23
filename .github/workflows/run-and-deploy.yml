@@ -33,19 +33,19 @@ jobs:
       #
       - name: Run scripts
         run: |
-          cd $GITHUB_WORKSPACE
+          cd $GITHUB_WORKSPACE/src
           for lang in $(ls);
           do
             if [ -d $lang ];then
-              mkdir -p ./outputs/$lang
+              mkdir -p ../outputs/$lang
               cd $lang
-              source run.sh
-              mv *.log ../outputs/$lang/
+              source run.sh >> ../../outputs/${lang}.txt
+              mv *.log ../../outputs/$lang/
               cd ..
-              echo $lang >> ./outputs/langs.txt
+              echo $lang >> ../outputs/langs.txt
             fi
           done
-
+          cd ..
       #
       # HelloWorlds/publishへpushする
       #
