@@ -18,6 +18,7 @@ jobs:
           git config pull.rebase false
           cd $GITHUB_WORKSPACE
           git branch publish
+          git checkout --theirs
           git merge origin/main
           ls
       #
