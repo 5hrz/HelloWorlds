@@ -8,6 +8,8 @@ jobs:
     steps:
       - name: Checkout sources
         uses: actions/checkout@v3
+        with:
+          ref: ""
       - name: Setup git
         run: |
           git config user.name github-actions
@@ -16,11 +18,6 @@ jobs:
           cd $GITHUB_WORKSPACE
           ls
           cd $GITHUB_WORKSPACE
-          git branch publish
-          git fetch origin publish
-          git checkout publish
-          git checkout .
-          git pull origin publish --rebase
           ls
       #
       # 実行用に各言語の環境をセットアップする
