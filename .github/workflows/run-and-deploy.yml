@@ -20,6 +20,7 @@ jobs:
           git branch publish
           git fetch origin publish
           git checkout publish
+          git pull
           rm -rf outputs
       #
       # 実行用に各言語の環境をセットアップする
