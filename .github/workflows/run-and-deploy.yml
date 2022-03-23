@@ -18,7 +18,7 @@ jobs:
           git config pull.rebase false
           cd $GITHUB_WORKSPACE
           git merge origin/main
-          ls
+          rm -rf outputs
       #
       # 実行用に各言語の環境をセットアップする
       #
