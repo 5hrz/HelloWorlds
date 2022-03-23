@@ -1,1 +1,3 @@
+$ g++ HelloWorld.cpp -o HelloWorld.cpp.out
+$ ./HelloWorld.cpp.out
 Hello, World!
