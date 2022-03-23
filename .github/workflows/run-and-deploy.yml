@@ -8,17 +8,17 @@ jobs:
     steps:
       - name: Checkout sources
         uses: actions/checkout@v3
+        with:
+          ref: "publish"
+          fetch-depth: 0
       - name: Setup git
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
+          git config pull.rebase false
           cd $GITHUB_WORKSPACE
+          git merge origin/main
           ls
-      - name: Change to publish branch
-        run: |
-          cd $GITHUB_WORKSPACE
-          git branch publish
-          git checkout publish
       #
       # 実行用に各言語の環境をセットアップする
       #
@@ -33,19 +33,19 @@ jobs:
       #
       - name: Run scripts
         run: |
-          cd $GITHUB_WORKSPACE
+          cd $GITHUB_WORKSPACE/src
           for lang in $(ls);
           do
             if [ -d $lang ];then
-              mkdir -p ./outputs/$lang
+              mkdir -p ../outputs/$lang
               cd $lang
-              source run.sh
-              mv *.log ../outputs/$lang/
+              source run.sh >> ../../outputs/${lang}.txt
+              mv *.log ../../outputs/$lang/
               cd ..
-              echo $lang >> ./outputs/langs.txt
+              echo $lang >> ../outputs/langs.txt
             fi
           done
-
+          cd ..
       #
       # HelloWorlds/publishへpushする
       #
