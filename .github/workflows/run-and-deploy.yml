@@ -27,6 +27,10 @@ jobs:
         with:
           distribution: "adopt"
           java-version: "17"
+      - name: Setup GCC
+        run: |
+          apt update
+          apt install build-essential
 
       #
       # 各言語のrun.shを実行しログを取得し移動させる
