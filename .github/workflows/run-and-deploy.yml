@@ -41,6 +41,8 @@ jobs:
               mkdir ./outputs/$lang
               cd $lang
               ls
+              pwd
+              cat run.sh
               source run.sh
               mv *.log ../outputs/$lang/
               cd ..
