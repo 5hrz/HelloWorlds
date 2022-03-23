@@ -39,7 +39,9 @@ jobs:
           do
             if [ -d $lang ];then
               mkdir ./outputs/$lang
-              cd $lang;source run.sh
+              cd $lang
+              ls
+              source run.sh
               mv *.log ../outputs/$lang/
               cd ..
               echo $lang >> ./outputs/langs.txt
