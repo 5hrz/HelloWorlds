@@ -19,6 +19,7 @@ jobs:
           git branch publish
           git fetch origin publish
           git checkout publish
+          git checkout .
           ls
       #
       # 実行用に各言語の環境をセットアップする
