@@ -1,3 +1,8 @@
 #!/bin/bash
 
-java HelloWorld.java >> HelloWorld.log
+for class in $(ls);
+do
+  if [ -f $class ]; then
+    java $class >> ${class}.log
+  fi
+done
