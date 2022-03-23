@@ -31,7 +31,10 @@ jobs:
         run: |
           sudo apt update
           sudo apt install build-essential
-
+      - uses: actions/setup-python@v3
+        with:
+          python-version: "3.7"
+          architecture: "x64"
       #
       # 各言語のrun.shを実行しログを取得し移動させる
       #
