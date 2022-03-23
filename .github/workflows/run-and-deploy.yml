@@ -17,9 +17,9 @@ jobs:
           git config user.email github-actions@github.com
           git config pull.rebase false
           cd $GITHUB_WORKSPACE
-          ls
           git branch publish
           git checkout publish
+          ls
       #
       # 実行用に各言語の環境をセットアップする
       #
