@@ -16,6 +16,7 @@ jobs:
           ls
       - name: Change to publish branch
         run: |
+          cd $GITHUB_WORKSPACE
           git branch publish
           git checkout publish
       #
@@ -32,6 +33,7 @@ jobs:
       #
       - name: Run scripts
         run: |
+          cd $GITHUB_WORKSPACE
           mkdir outputs
           for lang in $(ls);
           do
