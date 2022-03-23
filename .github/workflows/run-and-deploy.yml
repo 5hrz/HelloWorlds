@@ -18,7 +18,7 @@ jobs:
           git config pull.rebase false
           cd $GITHUB_WORKSPACE
           git branch publish
-          git checkout publish
+          git merge main
           ls
       #
       # 実行用に各言語の環境をセットアップする
