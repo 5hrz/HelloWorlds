@@ -34,15 +34,11 @@ jobs:
       - name: Run scripts
         run: |
           cd $GITHUB_WORKSPACE
-          mkdir outputs
           for lang in $(ls);
           do
             if [ -d $lang ];then
-              mkdir ./outputs/$lang
+              mkdir -p ./outputs/$lang
               cd $lang
-              ls
-              pwd
-              cat run.sh
               source run.sh
               mv *.log ../outputs/$lang/
               cd ..
