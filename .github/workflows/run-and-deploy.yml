@@ -8,10 +8,12 @@ jobs:
     steps:
       - name: Checkout sources
         uses: actions/checkout@v3
-      - name: Setup git user
+      - name: Setup git
         run: |
           git config user.name github-actions
           git config user.email github-actions@github.com
+          cd ~/HelloWorlds
+          ls
       - name: Change to publish branch
         run: |
           git branch publish
