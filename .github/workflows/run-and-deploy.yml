@@ -40,7 +40,7 @@ jobs:
               mkdir -p ../outputs/$lang
               cd $lang
               source run.sh >> ../../outputs/${lang}.txt
-              ls -1 "*.${lang}" >> ../../outputs/${lang}/files.txt
+              ls -1 *.${lang} >> ../../outputs/${lang}/files.txt
               mv *.log ../../outputs/$lang/
               cd ..
               echo $lang >> ../outputs/langs.txt
