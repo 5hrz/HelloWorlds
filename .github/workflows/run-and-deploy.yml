@@ -20,7 +20,7 @@ jobs:
           git fetch origin publish
           git checkout publish
           git checkout .
-          git pull origin publish:publish
+          git pull origin publish
           ls
       #
       # 実行用に各言語の環境をセットアップする
